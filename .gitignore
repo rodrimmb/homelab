@@ -1,0 +1,8 @@
+# Ignorar archivos .env
+.env
+# Ignorar todo el contenido dentro de las carpetas config
+**/config/**
+# Pero volver a incluir las carpetas config
+!**/config/
+# Mantener solo los archivos .gitkeep
+!**/config/.gitkeep
