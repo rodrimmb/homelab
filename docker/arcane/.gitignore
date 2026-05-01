@@ -1,0 +1,6 @@
+# Ignorar todo el contenido dentro de las carpetas data
+**/data/**
+# Pero volver a incluir las carpetas data (vacías)
+!**/data/
+# Mantener archivos .gitkeep
+!**/data/.gitkeep
