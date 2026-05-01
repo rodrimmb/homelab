@@ -1,0 +1,13 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: ghcr.io/home-assistant/home-assistant:2026.4.4
+    volumes:
+      - ${DOCKER_DIR}/homeassistant/config:/config
+      - /etc/localtime:/etc/localtime:ro # Sincroniza la hora con el sistema
+      - /run/dbus:/run/dbus:ro # Para que Home Assistant tenga acceso al Bluetooth
+    environment:
+      - TZ=${TZ:-Europe/Madrid} # Zona horaria
+    network_mode: host # Home Assistant necesita descubrir dispositivos en red evita problemas con mDNS, Zigbee, etc.
+    restart: unless-stopped # Se reinicia automáticamente si falla o al arrancar
+    privileged: true # Necesario para acceder a hardware
