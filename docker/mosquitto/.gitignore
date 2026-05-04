@@ -1,0 +1,9 @@
+# Ignorar todo el contenido dentro de las carpetas data y log
+**/data/**
+**/log/**
+# Pero volver a incluir las carpetas data y log (vacías)
+!**/data/
+!**/log/
+# Mantener archivos .gitkeep
+!**/data/.gitkeep
+!**/log/.gitkeep
