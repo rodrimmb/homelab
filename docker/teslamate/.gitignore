@@ -1,0 +1,12 @@
+# Ignorar todo el contenido dentro de las carpetas import, teslamate-db y teslamate-grafana-data
+**/import/**
+**/teslamate-db/**
+**/teslamate-grafana-data/**
+# Pero volver a incluir las carpetas import, teslamate-db y teslamate-grafana-data
+!**/import/
+!**/teslamate-db/
+!**/teslamate-grafana-data/
+# Mantener solo los archivos .gitkeep
+!**/import/.gitkeep
+!**/teslamate-db/.gitkeep
+!**/teslamate-grafana-data/.gitkeep
