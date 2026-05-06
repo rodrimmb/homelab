@@ -1,0 +1,6 @@
+# Ignorar todo el contenido dentro de las carpetas letsencrypt
+**/letsencrypt/**
+# Pero volver a incluir las carpetas letsencrypt (vacías)
+!**/letsencrypt/
+# Mantener archivos .gitkeep
+!**/letsencrypt/.gitkeep

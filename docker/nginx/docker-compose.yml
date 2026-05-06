@@ -1,0 +1,14 @@
+services:
+  nginx:
+    image: 'jc21/nginx-proxy-manager:2.14.0'
+    container_name: nginx
+    restart: unless-stopped
+    environment:
+      TZ: ${TZ:-Europe/Madrid}
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ${DOCKER_DIR}/nginx/data:/data
+      - ${DOCKER_DIR}/nginx/letsencrypt:/etc/letsencrypt
