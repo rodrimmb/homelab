@@ -1,0 +1,12 @@
+services:
+  ddns-updater:
+    image: qmcgaw/ddns-updater:latest
+    container_name: ddns-updater
+    restart: unless-stopped
+    ports:
+      - 8000:8000/tcp # Interfaz web
+    environment:
+      - PERIOD=5m # Intervalo de actualización
+      - HTTP_LISTEN_ADDRESS=:8000
+    volumes:
+      - ${DOCKER_DIR}/ddns/data:/updater/data
