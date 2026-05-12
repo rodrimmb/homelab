@@ -1,0 +1,9 @@
+# Ignorar todo el contenido dentro de las carpetas aconf y wireguard
+**/aconf/**
+**/wireguard/**
+# Pero volver a incluir las carpetas aconf y wireguard
+!**/aconf/
+!**/wireguard/
+# Mantener solo los archivos .gitkeep
+!**/aconf/.gitkeep
+!**/wireguard/.gitkeep

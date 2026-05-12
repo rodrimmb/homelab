@@ -1,0 +1,20 @@
+services:
+  wgdashboard:
+    image: ghcr.io/wgdashboard/wgdashboard:v4.3.3
+    restart: unless-stopped
+    container_name: wgdashboard
+    ports:
+      - 10086:10086/tcp # Interfaz web
+      - 51820:51820/udp # Puerto de WireGuard
+    environment:
+      - tz=${TZ:-Europe/Madrid}
+      - global_dns=${GLOBAL_DNS}
+      - public_ip=${DDNS} # Cuando genera un cliente (peer) en el fichero .conf usara el DDNS
+      - username=${USER}
+      - password=${PASSWORD}
+    volumes:
+      - ${DOCKER_DIR}/wg/aconf:/etc/amnezia/amneziawg
+      - ${DOCKER_DIR}/wg/wireguard:/etc/wireguard
+      - ${DOCKER_DIR}/wg/data:/data
+    cap_add:
+      - NET_ADMIN # Permite al contenedor crear interfaces WireGuard y tocar reglas de red en la maquina anfitrion
