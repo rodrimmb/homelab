@@ -3,9 +3,7 @@ services:
     image: ghcr.io/wgdashboard/wgdashboard:v4.3.3
     restart: unless-stopped
     container_name: wgdashboard
-    ports:
-      - 10086:10086/tcp # Interfaz web
-      - 51820:51820/udp # Puerto de WireGuard
+    network_mode: host # Para que el contenedor y el host compartan la red. En el puerto 10086 esta el panel web y el puerto 51820 es el de la VPN
     environment:
       - tz=${TZ:-Europe/Madrid}
       - global_dns=${GLOBAL_DNS}
@@ -18,3 +16,4 @@ services:
       - ${DOCKER_DIR}/wg/data:/data
     cap_add:
       - NET_ADMIN # Permite al contenedor crear interfaces WireGuard y tocar reglas de red en la maquina anfitrion
+      - SYS_MODULE # Permitir al contenedor cargar módulos del kernel
