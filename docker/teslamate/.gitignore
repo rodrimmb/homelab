@@ -2,6 +2,7 @@
 **/import/**
 **/teslamate-db/**
 **/teslamate-grafana-data/**
+**/backups/**
 # Pero volver a incluir las carpetas import, teslamate-db y teslamate-grafana-data
 !**/import/
 !**/teslamate-db/

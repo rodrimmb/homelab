@@ -1,6 +1,6 @@
 services:
   teslamate:
-    image: teslamate/teslamate:3.0.0
+    image: teslamate/teslamate:4.0.1
     container_name: teslamate
     restart: always
     environment:
@@ -10,6 +10,11 @@ services:
       - DATABASE_NAME=${DATABASE_NAME}
       - DATABASE_HOST=${DATABASE_HOST}
       - MQTT_HOST=${MQTT_HOST}
+      # Tesla Fleet API
+      - TESLA_API_HOST=https://fleet-api.prd.eu.vn.cloud.tesla.com
+      - TESLA_AUTH_HOST=https://auth.tesla.com
+      - TESLA_AUTH_PATH=/oauth2/v3
+      - TESLA_AUTH_CLIENT_ID=${TESLA_AUTH_CLIENT_ID}
     ports:
       - 4000:4000
     volumes:
