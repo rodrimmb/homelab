@@ -1,7 +1,7 @@
 services:
   homeassistant:
     container_name: homeassistant
-    image: ghcr.io/home-assistant/home-assistant:2026.5.1
+    image: ghcr.io/home-assistant/home-assistant:2026.5.4
     volumes:
       - ${DOCKER_DIR}/homeassistant/config:/config
       - /etc/localtime:/etc/localtime:ro # Sincroniza la hora con el sistema
