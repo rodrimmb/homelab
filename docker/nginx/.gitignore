@@ -1,6 +1,9 @@
 # Ignorar todo el contenido dentro de las carpetas letsencrypt
 **/letsencrypt/**
+**/tesla-fleet-key/**
 # Pero volver a incluir las carpetas letsencrypt (vacías)
 !**/letsencrypt/
+!**/tesla-fleet-key/
 # Mantener archivos .gitkeep
 !**/letsencrypt/.gitkeep
+!**/tesla-fleet-key/README.md
