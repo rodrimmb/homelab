@@ -12,4 +12,4 @@ services:
     volumes:
       - ${DOCKER_DIR}/nginx/data:/data
       - ${DOCKER_DIR}/nginx/letsencrypt:/etc/letsencrypt
-      - /home/pi/tesla-fleet-key/public-key.pem:/data/tesla-fleet-key/public-key.pem:ro
+      - ${DOCKER_DIR}/nginx/tesla-fleet-key/public-key.pem:/data/tesla-fleet-key/public-key.pem:ro
